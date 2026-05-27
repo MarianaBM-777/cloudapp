@@ -8,39 +8,62 @@
     <style>
         body{
             font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
+            background: linear-gradient(to bottom, #4bc8f1, #3c50e7);
+            min-height: 100vh;
+            margin: 0;
             text-align: center;
-            padding-top: 60px;
+            background-repeat: no-repeat;
         }
 
         .contenedor{
             background: white;
             width: 60%;
             margin: auto;
+            margin-top: 10%;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }
 
         h1{
-            color: #0077cc;
+            color: rgb(28, 5, 133);
+            text-shadow: 0 0 10px #05eeee, 0 0 20px #8e17dd ;
         }
 
         p{
             font-size: 18px;
+        }
+        strong {
+            color: rgb(184, 8, 8);
+        }
+        b{
+            color: rgb(17, 105, 173);
+        }
+        .negrilla{
+            color: black;
+        }
+        ul {
+            text-align: justify;
         }
     </style>
 </head>
 <body>
 
     <div class="contenedor">
-        <h1>Aplicación en la Nube ☁️</h1>
+        <h1>Práctica de aplicación en la Nube ☁️</h1>
 
-        <p><strong>Estudiante:</strong> Mariana Benavides M.</p>
+        <p><strong>Personaje:</strong> Jesús de Nazaret</p>
 
-        <p>La aplicación está alojada en la nube correctamente.</p>
+        <p>Fue un <b class="negrilla">maestro y líder religioso judío</b>. Durante su vida se dedicó a predicar y a ser <i>'rabi'</i> (término hebreo: "mi maestro"), su misión se centró en enseñar a las personas a amarse mutuamente, respetarse, perdonarse, tener fe y creer en Dios.</p>
 
-        <p>Servidor funcionando 24/7 desde internet.</p>
+        <p><strong>Frases de Jesús en los evangelios:</strong></p>
+
+        <ul>
+            <li>Ámense los unos a los otros; como yo los he amado, que también ustedes se amen los unos a los otros. <b class="negrilla">(Jn 13, 34)</b></li>
+            <li>Vengan a mí todos los que están cansados y agobiados, y yo los aliviaré. 
+            <br>
+            Tomen mi yugo sobre ustedes y aprendan de mí, que soy manso y humilde de corazón, y encontrarán descanso para sus almas. Porque mi yugo es llevadero y mi carga ligera <b class="negrilla">(Mt 11,28-30)</b></li>
+        </ul>
 
         <p id="fecha"></p>
     </div>
@@ -49,7 +72,7 @@
         const fecha = new Date();
 
         document.getElementById("fecha").innerHTML =
-            "Fecha y hora: " + fecha;
+            "<b> Fecha y hora (COL): </b>" + fecha;
     </script>
 
 </body>
