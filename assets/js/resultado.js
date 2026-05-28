@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let puntaje = 0;
 
-    if (preguntaUno === "" || preguntaDos === "select" || !preguntaTres){
+    if (preguntaUno === "" || preguntaDos === "select"){
         resultado.innerHTML = "Aviso: Responde todas las preguntas antes de enviar. Intentalo de nuevo :C"
 
         return;
