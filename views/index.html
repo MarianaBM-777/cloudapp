@@ -10,22 +10,54 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(to bottom, #4bc8f1, #3c50e7);
             min-height: 100vh;
+            padding: 30px;
             margin: 0;
+            /* display: flex; */
             text-align: center;
             background-repeat: no-repeat;
         }
 
         .contenedor{
             background: white;
-            width: 60%;
+            width: 100%;
+            max-width: 550px;
             margin: auto;
             margin-top: 10%;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 35px;
+            border-radius: 20px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }
 
+        .container_formulario{
+            background: rgba(155, 250, 255, 0.6);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 550px;
+            margin: auto;
+            margin-top: 10%;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+            color: rgb(0, 0, 0);
+        }
+
+        .menu{
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .ocultar{
+            display: none;
+        }
+
         h1{
+            text-align: center;
+            margin-bottom: 30px;
             color: rgb(28, 5, 133);
             text-shadow: 0 0 10px #05eeee, 0 0 20px #8e17dd ;
         }
@@ -33,39 +65,207 @@
         p{
             font-size: 18px;
         }
+
         strong {
             color: rgb(184, 8, 8);
         }
+
         b{
             color: rgb(17, 105, 173);
         }
+
         .negrilla{
             color: black;
         }
+
         ul {
             text-align: justify;
         }
+
+        .img_1{
+            border-radius: 20%;
+            height: 40%;
+            width: 40%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .pregunta{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 20px;
+            color: #111;
+        }
+
+        input[type="text"],
+        select{
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 14px;
+            font-size: 15px;
+            outline: none;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.9);
+             transition: 0.3s;
+        }
+
+        input[type="text"]:focus,
+        select:focus{
+            box-shadow: 0 0 10px rgba(60,80,231,0.5);
+            transform: scale(1.01);
+        }
+
+        .grupo_checkbox {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 5px;
+            
+        }
+
+        .checkbox_group label{
+            font-weight: 17px;
+            font-weight: normal;
+        }
+
+        #resultado{
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            color: #fff;
+        }
+        button {
+            top: 40px;
+            padding: 10px 18px;
+            background: #5b03a8;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: 0.2s;
+            position: relative;
+            z-index: 0;
+            border: none;
+            cursor: pointer;
+
+        }
+        button:hover {
+            background: linear-gradient(to bottom, #28dda4, #2bb530);
+            backdrop-filter: blur(10px);
+            border-radius: #00c2ee;
+            transform: scale(1.03);
+
+        }
+       
     </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <h1>Práctica de aplicación en la Nube ☁️</h1>
+    <nav class="menu">
+        <button onclick="mostrarSeccion('home')">Home ⌂</button>
+        <button onclick="mostrarSeccion('quiz')">Cuestionario 📝</button>        
+    </nav>
+    
+    <div id="home" class="seccion">
+        <div class="contenedor">
+            <h1>Práctica de aplicación en la Nube ☁️</h1>
 
-        <p><strong>Personaje:</strong> Jesús de Nazaret</p>
+            <p><strong>Personaje:</strong> Jesús de Nazaret</p>
 
-        <p>Fue un <b class="negrilla">maestro y líder religioso judío</b>. Durante su vida se dedicó a predicar y a ser <i>'rabi'</i> (término hebreo: "mi maestro"), su misión se centró en enseñar a las personas a amarse mutuamente, respetarse, perdonarse, tener fe y creer en Dios.</p>
+            <img src="../assets/img/img_jesus.jpg" alt="Imagen de Jesús pastoreando un rebaño" class="img_1">
 
-        <p><strong>Frases de Jesús en los evangelios:</strong></p>
+            <p>Fue un <b class="negrilla">maestro y líder religioso judío</b>. Durante su vida se dedicó a predicar y a ser <i>'rabi'</i> (término hebreo: "mi maestro"), su misión se centró en enseñar a las personas a amarse mutuamente, respetarse, perdonarse, tener fe y creer en Dios.</p>
 
-        <ul>
-            <li>Ámense los unos a los otros; como yo los he amado, que también ustedes se amen los unos a los otros. <b class="negrilla">(Jn 13, 34)</b></li>
-            <li>Vengan a mí todos los que están cansados y agobiados, y yo los aliviaré. 
+            <p><strong>Frases de Jesús en los evangelios:</strong></p>
+
+            <ul>
+                <li>Ámense los unos a los otros; como yo los he amado, que también ustedes se amen los unos a los otros. <b class="negrilla">(Jn 13, 34)</b></li>
+                <li>Vengan a mí todos los que están cansados y agobiados, y yo los aliviaré. 
+                <br>
+                Tomen mi yugo sobre ustedes y aprendan de mí, que soy manso y humilde de corazón, y encontrarán descanso para sus almas. Porque mi yugo es llevadero y mi carga ligera <b class="negrilla">(Mt 11,28-30)</b></li>
+            </ul>
+
+            <p id="fecha"></p>
+        </div>
+    </div>
+
+    <div id="quiz" class="ocultar">
+        <div class="container_formulario">
+            <h1>Cuestionario sobre Jesús 📝</h1>
+            <form id="formulario">
+
+                <div class="pregunta">
+                    <label for="pregunta_1">
+                        1. ¿Dónde nació Jesús?
+                    </label>
+
+                    <input type="text" id="pregunta_1" placeholder="Escribe aquí...">
+                </div>
+                
+                <div class="pregunta">
+                    <label for="pregunta_2">
+                        2. ¿Quién era el discípulo amado de Jesús?
+                    </label>
+
+                    <select id="pregunta_2">
+                        <option value="select">Selecciona una opción</option>
+                        <option value="Santiago">Santiago el Mayor</option>
+                        <option value="Judas">Judas Iscariote</option>
+                        <option value="Juan">Juan</option>
+                        <option value="Pedro">Simón Pedro</option>
+                    </select>
+                </div>
+
+                <div class="pregunta">
+
+                    <label>
+                        3. ¿Qué día resucitó Jesús?
+                    </label>
+
+                    <div class="grupo_checkbox">
+
+                        <div>
+                            <input type="radio" name="pregunta_tres" id="segundo_dia">
+                            <label for="segundo_dia">Segundo día</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="pregunta_tres" id="tercer_dia">
+                            <label for="tercer_dia">Tercer día</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="pregunta_tres" id="cuarto_dia">
+                            <label for="cuarto_dia">Cuarto día</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="grupo_botones">
+                    <button class="button" id="boton_vr" type="submit">Verificar mis respuestas</button> 
+                </div>
+                
+            </form>
             <br>
-            Tomen mi yugo sobre ustedes y aprendan de mí, que soy manso y humilde de corazón, y encontrarán descanso para sus almas. Porque mi yugo es llevadero y mi carga ligera <b class="negrilla">(Mt 11,28-30)</b></li>
-        </ul>
-
-        <p id="fecha"></p>
+            <p id="resultado"></p>
+        </div>
     </div>
 
     <script>
@@ -74,6 +274,8 @@
         document.getElementById("fecha").innerHTML =
             "<b> Fecha y hora (COL): </b>" + fecha;
     </script>
+
+    <script src="../assets/js/resultado.js"></script>
 
 </body>
 </html>
